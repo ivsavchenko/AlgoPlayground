@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Algos.Code.Recursion;
 
 namespace Algos.ConsoleApp
 {
@@ -10,6 +7,12 @@ namespace Algos.ConsoleApp
     {
         static void Main(string[] args)
         {
+            FibonacciRecursive fib = new FibonacciRecursive();
+            var result = fib.CalculateFromNto1(6);
+
+            Console.WriteLine($"Result: {result}");
+            Console.WriteLine($"Count of function calls: {fib.OperationCount}");
+            Console.WriteLine($"{Math.Pow(2, 6)}");
         }
     }
 }
