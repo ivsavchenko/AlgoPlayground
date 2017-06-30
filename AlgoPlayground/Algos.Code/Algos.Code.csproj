@@ -2,4 +2,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="DataStructures\" />
+    <Folder Include="DataStructures\LinkedList\" />
+  </ItemGroup>
 </Project>
