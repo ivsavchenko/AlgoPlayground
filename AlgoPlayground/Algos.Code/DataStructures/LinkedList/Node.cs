@@ -13,5 +13,14 @@
             get;
             set;
         }
+
+        public Node()
+        {
+        }
+
+        public Node(T val)
+        {
+            Value = val;
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using Algos.Code.DataStructures.LinkedList;
 using Algos.Code.Dynamic;
 using Algos.Code.Recursion;
@@ -14,16 +14,15 @@ namespace Algos.ConsoleApp
             ll.Add(2);
             ll.Add(3);
 
-            foreach(var item in ll)
-            {
-                Console.WriteLine(item.Value);
-            }
+            ll.Delete(0);
+            ll.Delete(0);
+			ll.Delete(0);
 
-            ll.Clear();
-
-			ll.Add(77);
-            ll.Add(88);
-			ll.Add(33);
+            ll.Insert(0, 10);
+            ll.Insert(0, 11);
+            ll.Insert(0, 12);
+            ll.Add(77);
+            ll.Insert(2, 555);
 
 			foreach (var item in ll)
 			{
