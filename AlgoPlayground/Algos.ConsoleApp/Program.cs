@@ -1,4 +1,6 @@
 ﻿﻿using System;
+using System.Linq;
+using System.Numerics;
 using Algos.Code.DataStructures.LinkedList;
 using Algos.Code.Dynamic;
 using Algos.Code.Recursion;
@@ -9,6 +11,23 @@ namespace Algos.ConsoleApp
     {
         static void Main(string[] args)
         {
+            var inputStr = Console.ReadLine().Split(' ');
+            int[] arr = inputStr.Select(x => int.Parse(x)).ToArray();
+			int size = arr[2];
+
+			BigInteger[] result = new BigInteger[size];
+			result[0] = arr[0];
+			result[1] = arr[1];
+
+			for (int i = 2; i < size; i++)
+			{
+				//Can't use Math.Pow here, because it doesn't accept BigInteger as a parameter
+				result[i] = result[i - 2] + result[i - 2] * result[i - 2];
+			}
+
+            /*
+			Console.WriteLine(result[size - 1]);
+            BigInteger b;
             LinkedList<int> ll = new LinkedList<int>();
             ll.Add(1);
             ll.Add(2);
@@ -27,7 +46,7 @@ namespace Algos.ConsoleApp
 			foreach (var item in ll)
 			{
 				Console.WriteLine(item.Value);
-			}
+			}*/
 
         /*    Console.WriteLine("Fibonacci Recursive");
             FibonacciRecursive fib = new FibonacciRecursive();
