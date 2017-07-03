@@ -5,5 +5,6 @@
   <ItemGroup>
     <Folder Include="DataStructures\" />
     <Folder Include="DataStructures\LinkedList\" />
+    <Folder Include="Strings\" />
   </ItemGroup>
 </Project>
