@@ -75,12 +75,13 @@ namespace Algos.ConsoleApp
                     moveFew = false;
                     rook--;
                     stack.Push(rook);
-                    int col = rooks[rook, 0];
-                    int row = rooks[rook, 1];
+                    int row = rooks[rook, 0];
+                    int col = rooks[rook, 1];
+
                     rooks[rook, 0] = 0;
                     rooks[rook, 1] = 0;
 
-                    arr[col, row] = 0;
+                    arr[row, col] = 0;
 
                     if (col < size - 1)
                     {
@@ -108,15 +109,15 @@ namespace Algos.ConsoleApp
 
         private bool SetRookIfPossible(int rook, int startCol, int startRow)
         {
-            for (int i = startCol; i < size; i++)
+            for (int row = startRow; row < size; row++)
             {
-                for (int j = startRow; j < size; j++)
+                for (int col = startCol; col < size; col++)
                 {
-                    if (CheckCell(i, j))
+                    if (CheckCell(row, col))
                     {
-                        arr[i, j] = rook;
-                        rooks[rook, 0] = i;
-                        rooks[rook, 1] = j;
+                        arr[row, col] = rook;
+                        rooks[rook, 0] = row;
+                        rooks[rook, 1] = col;
                         return true;
                     }
                 }
@@ -125,11 +126,11 @@ namespace Algos.ConsoleApp
             return false;
         }
 
-        private bool CheckCell(int col, int row)
+        private bool CheckCell(int row, int col)
         {
             for (int k = 0; k < size; k++)
             {
-                if(arr[k, row] != 0 || arr[col, k] != 0)                
+                if(arr[row, k] != 0 || arr[k, col] != 0)                
                 {
                     return false;
                 }
