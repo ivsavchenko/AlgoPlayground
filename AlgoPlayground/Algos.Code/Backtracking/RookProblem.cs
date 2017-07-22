@@ -46,7 +46,7 @@ namespace Algos.Code.Backtracking
                 {
                     arr.WriteToConsole(0, size, 0, size);                    
                     solutionsFound++;
-                    Console.WriteLine(solutionsFound);
+                    //Console.WriteLine(solutionsFound);
                 }
 
                 bool moveFew;
