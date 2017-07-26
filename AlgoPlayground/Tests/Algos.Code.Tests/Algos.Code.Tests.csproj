@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dynamic\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Algos.Code\Algos.Code.csproj" />
   </ItemGroup>
 
