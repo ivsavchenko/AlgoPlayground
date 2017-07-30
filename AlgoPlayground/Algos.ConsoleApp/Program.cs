@@ -1,9 +1,14 @@
-﻿namespace Algos.ConsoleApp
+﻿using Algos.Code.Sort;
+
+namespace Algos.ConsoleApp
 {
     class Program
     {
         static void Main(string[] args)
-        {            
+        {
+            int[] input = new int[] { 5, 7, 1, 2, 6, 4 };
+            MergeSort sort = new MergeSort();
+            int[] output = sort.Sort(input);
         }
     }
 }
