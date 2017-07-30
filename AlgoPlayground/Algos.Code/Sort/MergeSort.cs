@@ -35,15 +35,15 @@ namespace Algos.Code.Sort
 
             for (int i = 0; i < left.Length + right.Length; i++)
             {
-                if ((indL < left.Length && indR == right.Length) || 
+                if ((indL < left.Length && indR == right.Length) ||
                     (indL < left.Length && indR < right.Length && left[indL] < right[indR]))
                 {
                     result[i] = left[indL];
                     indL++;
                 }
-                else
-                    if ((indR < right.Length && indL == left.Length) || 
-                        (indL < left.Length && indR < right.Length && right[indR] < left[indL]))
+                else 
+                if ((indR < right.Length && indL == left.Length) ||
+                    (indL < left.Length && indR < right.Length && right[indR] < left[indL]))
                 {
                     result[i] = right[indR];
                     indR++;
