@@ -6,23 +6,22 @@ using Xunit;
 
 namespace Algos.Code.Tests.Sort
 {
-    public class MergeSortTests
+    public class ShellSortTests
     {
         [Fact]
         public void Should_Return_Sorted_Array()
         {
             Random r = new Random();
-            int[] input = r.GenerateIntArray(123).ToArray();
+            int[] input = r.GenerateIntArray(113).ToArray();
 
-            MergeSort sort = new MergeSort();
-            int[] output = sort.Sort(input);
+            ShellSort sort = new ShellSort();
+            var actual = sort.Sort(input);
 
-            Assert.True(output.IsSorted());
+            Assert.True(actual.IsSorted());
         }
 
-
         [Fact]
-        public void Should_Be_Faster_Than_Shell()
+        public void Should_Be_Much_Faster_Than_Insertion()
         {
             Random r = new Random();
             int[] inputInsertions = r.GenerateIntArray(7000).ToArray();
@@ -31,13 +30,13 @@ namespace Algos.Code.Tests.Sort
             ShellSort shell = new ShellSort();
             var actualShell = shell.Sort(inputShell);
 
-            MergeSort merge = new MergeSort();
-            var actualMerge = merge.Sort(inputInsertions);
+            InsertionSort inserts = new InsertionSort();
+            var actualInserts = inserts.Sort(inputInsertions);
 
             Assert.True(actualShell.IsSorted());
-            Assert.True(actualMerge.IsSorted());
+            Assert.True(actualInserts.IsSorted());
 
-            Assert.True(shell.Counter > merge.Counter);
+            Assert.True(inserts.Counter > shell.Counter);
         }
     }
 }

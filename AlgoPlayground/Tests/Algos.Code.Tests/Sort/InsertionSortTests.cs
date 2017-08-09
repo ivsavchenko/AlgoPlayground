@@ -18,6 +18,19 @@ namespace Algos.Code.Tests.Sort
             var actual = sort.Sort(input);
 
             Assert.True(actual.IsSorted());    
+            
+        }
+
+        [Fact]
+        public void Should_Return_Sorted_Array_WithoutWhile()
+        {
+            Random r = new Random();
+            int[] input = r.GenerateIntArray(113).ToArray();
+
+            InsertionSort sort = new InsertionSort();
+            var actual = sort.SortWithoutWhile(input);
+
+            Assert.True(actual.IsSorted());
         }
     }
 }

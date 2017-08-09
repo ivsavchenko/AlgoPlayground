@@ -4,6 +4,8 @@ namespace Algos.Code.Sort
 {
     public class MergeSort
     {
+        public int Counter { get; set; } = 0;
+
         public int[] Sort(int[] arr)
         {
             if(arr.Length == 1)
@@ -40,6 +42,8 @@ namespace Algos.Code.Sort
                 {
                     result[i] = left[indL];
                     indL++;
+
+                    Counter++;
                 }
                 else 
                 if ((indR < right.Length && indL == left.Length) ||
@@ -47,6 +51,8 @@ namespace Algos.Code.Sort
                 {
                     result[i] = right[indR];
                     indR++;
+
+                    Counter++;
                 }
             }
 
