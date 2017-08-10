@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Algos.Code.Numbers
@@ -34,10 +35,16 @@ namespace Algos.Code.Numbers
             }            
 
             long d = 3;
+            double sqrt = Math.Sqrt(n);
             while (n > 1)
             {
                 while (n % d == 0)
                 {
+                    if(d >= sqrt)
+                    {
+                        return d;
+                    }
+
                     factors.Add(d);
                     n /= d;
                 }
