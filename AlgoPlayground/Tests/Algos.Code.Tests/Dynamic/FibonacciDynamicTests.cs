@@ -24,5 +24,15 @@ namespace Algos.Code.Tests.Dynamic
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Should_Return_1_From_Array()
+        {
+            int expected = 1;
+            FibonacciDynamic fib = new FibonacciDynamic();
+            var actual = fib.Calculate(1);
+
+            Assert.Equal(expected, actual);
+        }
     }
 }
